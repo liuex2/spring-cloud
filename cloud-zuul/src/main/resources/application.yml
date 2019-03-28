@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: cloud-zuul
+  #服务链路追踪配置
+  zipkin:
+    base-url: http://localhost:9411
+
+server:
+  port: 8769
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#以 /api/a 开头的请求都转发给 cloud-ribbon 服务,* 为mapper地址，例如hi?message=HelloZuul
+#以 /api/b 开头的请求都转发给 cloud-feign 服务
+zuul:
+  routes:
+    api-a:
+      path: /api/a/**
+      serviceId: cloud-ribbon
+    api-b:
+      path: /api/b/**
+      serviceId: cloud-feign
