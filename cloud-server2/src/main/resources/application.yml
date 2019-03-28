@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: cloud-server2
+  #服务链路追踪配置
+  zipkin:
+    base-url: http://localhost:9411
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/new?tinyInt1isBit=false&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 10000
+  jedis:
+    pool:
+      #最大连接数
+      max-active: 1024
+      #最大阻塞等待时间(负数表示没限制)
+      max-wait: 20000
+      #最大空闲
+      max-idle: 200
+      #最小空闲
+      min-idle: 10
+      #连接超时时间
+  ##### 统一日期转换 #####
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+server:
+  port: 8763
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    com:
+      looedu:
+        mapper: debug
+
+## 该配置节点为独立的节点，容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.cifmedia.pc.pojo  # 注意：对应实体类的路径
+

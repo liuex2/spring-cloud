@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="actor" class="com.spring.cloud.server.entity.Actor">
+        <property name="id" value="123456"></property>
+        <property name="name" value="zhangsan"></property>
+        <property name="age" value="19"></property>
+    </bean>
+
+    <!--通过构造器赋值-->
+    <bean id="actor2" class="com.spring.cloud.server.entity.Actor">
+        <constructor-arg name="id" value="123456"></constructor-arg>
+        <constructor-arg name="name" value="zhangsan"></constructor-arg>
+        <constructor-arg name="age" value="19"></constructor-arg>
+    </bean>
+
+    <!--通过构造器赋值-->
+    <bean id="actor3" class="com.spring.cloud.server.entity.Actor">
+        <constructor-arg value="123456" index="0"></constructor-arg>
+        <constructor-arg value="zhangsan"></constructor-arg>
+        <constructor-arg value="19" index="2" type="int"></constructor-arg>
+    </bean>
+
+</beans>
