@@ -1,0 +1,23 @@
+spring:
+  #cloud云配置
+  application:
+    name: cloud-feign
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: cloud-client
+      label: master
+      profile: dev
+
+#server:
+#  port: 8765
+#
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#
+## Feign 是自带熔断器的，但默认是关闭的，打开
+#feign:
+#  hystrix:
+#    enabled: true
