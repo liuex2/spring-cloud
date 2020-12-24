@@ -32,10 +32,10 @@
 
         <!-- Spring Boot Begin -->
         <!--缓存组件 -->
-        <dependency>
-            <groupId>javax-cache</groupId>
-            <artifactId>cache-api</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>javax-cache</groupId>-->
+<!--            <artifactId>cache-api</artifactId>-->
+<!--        </dependency>-->
         <!-- Spring Boot End -->
 
         <!-- Spring Cloud Begin -->
@@ -58,16 +58,16 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.spring.cloud.server.ServerApplication2</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <mainClass>com.spring.cloud.server.ServerApplication2</mainClass>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>
